@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>PLC_TP1</title>
+</head>
+<body>
+    <h1>PLC_TP1</h1>
+    <div class="top-right">
+        <img src="/static/1729350397471.png" alt="Imagem 1" width="150" height="150">
+        <img src="/static/1729350696645.png" alt="Imagem 2" width="150" height="150">
+        
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Menor idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ menor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Maior idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ maior }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Masculinos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ masculino }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Femininos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ feminino }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <div class="container">
+        <div class="texto">
+            <h2>Modalidades por Ano:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Modalidade</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ano, modalidades in lista_anos.items() %}
+                        {% for modalidade, total in modalidades.items() %}
+                            <tr>
+                                <td>{{ ano }}</td>  
+                                <td>{{ modalidade }}</td>
+                                <td>{{ total }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="texto">
+            <h2>Total de Praticantes por Modalidade:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modalidade</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for modalidade, total in conta_numeros.items() %}
+                    <tr>
+                        <td>{{ modalidade }}</td>
+                        <td>{{ total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="texto">
+            <h2>Percentagem de Aptos por Ano:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Percentagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ano, percentagem in media.items() %}
+                    <tr>
+                        <td>{{ ano }}</td>
+                        <td>{{ percentagem }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="texto">
+            <h2>Percentagem não Aptos:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Percentagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ano, percentagem in media2.items() %}
+                    <tr>
+                        <td>{{ ano }}</td>
+                        <td>{{ percentagem }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

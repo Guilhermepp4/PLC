@@ -1,0 +1,55 @@
+h1{
+    text-align: center;
+    font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body{
+    background: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.6));
+}
+.top-right {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Para alinhar as imagens horizontalmente */
+}
+
+.top-right img {
+    margin-left: 10px; /* Espaço entre as imagens */
+}
+p{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+pre{
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.container {
+    margin: 20px 0;
+}
+
+
+.texto {
+    text-align: left; /* Alinha o texto à esquerda */
+
+}
